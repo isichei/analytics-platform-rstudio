@@ -48,6 +48,9 @@ RUN apt-get -qq update && apt-get -qq install -y \
 	&& alien -i /tmp/simbaathena-1.0.2.1003-1.x86_64.rpm \
 	&& rm -f /tmp/simbaathena-1.0.2.1003-1.x86_64.rpm
 
+# Users want nano when they git commit not vim
+RUN update-alternatives --set editor /bin/nano
+
 # Need vega and vega lite npm packages to render high res vega charts
 RUN sudo curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash \
     && apt-get install -y nodejs npm
