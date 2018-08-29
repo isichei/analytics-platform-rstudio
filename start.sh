@@ -26,4 +26,7 @@ echo -n "${SECURE_COOKIE_KEY}" > /var/lib/rstudio-server/secure-cookie-key
 set -x
 chmod 600 /var/lib/rstudio-server/secure-cookie-key
 
+# Use Debian's /usr/bin/editor (configured with update-alternatives --set editor)
+unset EDITOR
+
 /usr/lib/rstudio-server/bin/rserver --server-daemonize=0
