@@ -61,7 +61,7 @@ RUN npm config set unsafe-perm true \
 RUN pip install boto3
 
 # Install etl_manager to allow analysts declare databases on athena via R (using reticulate)
-RUN pip install git+git://github.com/moj-analytical-services/etl_manager.git@v1.0.2#egg=etl_manager
+RUN pip install git+git://github.com/moj-analytical-services/etl_manager.git@v1.0.3s#egg=etl_manager
 
 # Install R Packages
 RUN R -e "source('https://bioconductor.org/biocLite.R')" \
